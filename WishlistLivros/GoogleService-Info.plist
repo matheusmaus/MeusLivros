@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>226749790941-7otodmuejupip079s0d8s2d95120frjc.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.226749790941-7otodmuejupip079s0d8s2d95120frjc</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDqCmqsET-nL5Trxqn7Bt7ZeNsnpXDNjPY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>226749790941</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>digital.mxm.WishlistLivros</string>
+	<key>PROJECT_ID</key>
+	<string>wishlist-de-livros</string>
+	<key>STORAGE_BUCKET</key>
+	<string>wishlist-de-livros.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<true/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:226749790941:ios:4c47f0e84412f3b9</string>
+	<key>DATABASE_URL</key>
+	<string>https://wishlist-de-livros.firebaseio.com</string>
+</dict>
+</plist>
