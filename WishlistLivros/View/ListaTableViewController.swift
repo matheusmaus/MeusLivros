@@ -9,7 +9,7 @@
 import UIKit
 
 class ListaTableViewController: UITableViewController, ReadBookDelegate {
-    
+
     var livros: Array<Livros> = []
     
     override func viewDidLoad() {
@@ -19,10 +19,9 @@ class ListaTableViewController: UITableViewController, ReadBookDelegate {
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         navigationController?.navigationBar.barTintColor = UIColor(red: 0.0/255.0, green: 168.0/255.0, blue: 197.0/255.0, alpha: 1.0)
+        self.navigationController?.navigationBar.barStyle = .black
         
         let spinner = UIActivityIndicatorView(style: .gray)
-        spinner.startAnimating()
-        spinner.frame = CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: 30)
         self.tableView.tableFooterView = spinner
         
         self.tableView.delegate = self
@@ -31,7 +30,7 @@ class ListaTableViewController: UITableViewController, ReadBookDelegate {
         DataSingleton.sharedInstance.readBookDelegate = self
         DataSingleton.sharedInstance.retornaLivros();
     }
-    
+
     func onReadBook(success: Bool, livros: Array<Livros>) {
             self.livros = livros
             self.tableView.reloadData()

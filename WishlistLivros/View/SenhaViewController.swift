@@ -11,6 +11,10 @@ import Firebase
 
 class SenhaViewController: UIViewController, ValidaEmailSenhaDelegate {
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     var email: String = ""
     
     @IBOutlet weak var labelSenha: UITextField!
@@ -18,7 +22,7 @@ class SenhaViewController: UIViewController, ValidaEmailSenhaDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         setGradientBackground()
         super.viewWillAppear(animated)

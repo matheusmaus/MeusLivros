@@ -10,6 +10,10 @@ import UIKit
 
 class EmailViewController: UIViewController, ValidaEmailDelegate {
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     @IBOutlet weak var labelEmail: UITextField!
     
     override func viewDidLoad() {
@@ -21,8 +25,6 @@ class EmailViewController: UIViewController, ValidaEmailDelegate {
         setGradientBackground()
         super.viewWillAppear(animated)
     }
-    
-    
     
     @IBAction func onBtnNext(_ sender: Any) {
         let email = self.labelEmail.text

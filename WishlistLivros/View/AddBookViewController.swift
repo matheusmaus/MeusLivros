@@ -10,12 +10,13 @@ import UIKit
 
 class AddBookViewController: UIViewController, AddBookDelegate {
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     @IBOutlet weak var nomeLivro: UITextField!
     @IBOutlet weak var nomeAutor: UITextField!
     @IBOutlet weak var precco: UITextField!
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -11,6 +11,10 @@ import Firebase
 
 class CriarContaViewController: UIViewController {
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     var email: String = ""
     
     @IBOutlet weak var labelPass: UITextField!

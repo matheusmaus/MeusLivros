@@ -10,12 +10,15 @@ import UIKit
 
 class AddCategoryViewController: UIViewController, AddCategoryDelegate {
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     @IBOutlet weak var nomeCategoria: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
 
     @IBAction func onSalvar(_ sender: Any) {
         

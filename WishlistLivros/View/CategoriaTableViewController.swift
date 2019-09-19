@@ -16,11 +16,12 @@ class CategoriaTableViewController: UITableViewController, ReadCategoryDelegate 
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.barTintColor = UIColor(red: 0.0/255.0, green: 168.0/255.0, blue: 197.0/255.0, alpha: 1.0)
+        self.navigationController?.navigationBar.barStyle = .black
 
-        
         let spinner = UIActivityIndicatorView(style: .gray)
-        spinner.startAnimating()
-        spinner.frame = CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: 30)
         self.tableView.tableFooterView = spinner
         
         self.tableView.delegate = self
