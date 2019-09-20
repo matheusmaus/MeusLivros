@@ -146,7 +146,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Qqv-hL-rEi" kind="show" id="bfW-Bb-ykT"/>
+                                    <segue destination="Qqv-hL-rEi" kind="show" identifier="ListaTableViewController" id="bfW-Bb-ykT"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -300,7 +300,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="qDh-mO-mjd">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="oqg-sI-6Uf" kind="popoverPresentation" popoverAnchorBarButtonItem="qDh-mO-mjd" id="ajh-17-sf3">
+                                <segue destination="oqg-sI-6Uf" kind="popoverPresentation" identifier="AddBookViewController" popoverAnchorBarButtonItem="qDh-mO-mjd" id="ajh-17-sf3">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                 </segue>
                             </connections>
@@ -508,7 +508,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="M9i-1O-16u"/>
+        <segue reference="IWA-lc-7GW"/>
+        <segue reference="bfW-Bb-ykT"/>
         <segue reference="SZ6-25-4DH"/>
     </inferredMetricsTieBreakers>
 </document>

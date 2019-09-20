@@ -172,7 +172,6 @@ class DataSingleton {
                 self.addCategoryDelegate.onAddCategory(success: false)
             } else {
                 self.addCategoryDelegate.onAddCategory(success: true)
-
             }
         }
     }
@@ -180,6 +179,7 @@ class DataSingleton {
     func retornaCategorias() {
 
         var categorias = Array<Categorias>()
+        
         guard let uid = Auth.auth().currentUser?.uid else{
             return
         }
@@ -187,6 +187,7 @@ class DataSingleton {
         
         db.collection("\(uid)").getDocuments {(snapshot, err) in
             if let err = err {
+                print(err)
                 self.readCategoryDelegate.onReadCategory(success: false, categorias: Array<Categorias>())
             } else {
 
@@ -203,21 +204,21 @@ class DataSingleton {
         }
     }
     
-    func adicionaLivros(_ nome: String, autor: String, preco: String) {
+    func adicionaLivros(_ nome: String, autor: String, preco: String, categoria: Categorias) {
         
         let db = Firestore.firestore()
         guard let uid = Auth.auth().currentUser?.uid else{
             return
         }
-        /*
-        db.collection("\(uid)").document(categoria).addDocument(data: [
-            
+        
+        let categoriaId = categoria.ID
+        let data = [
             "nome": nome,
             "autor": autor,
             "preco": preco
-            
-        ]) {
-            
+        ]
+        
+        db.collection("\(uid)").document(categoriaId).collection("livros").addDocument(data: data) {
             (error:Error?) in
             if error != nil {
                 self.addBookDelegate.onAddBook(success: false)
@@ -225,28 +226,33 @@ class DataSingleton {
                 self.addBookDelegate.onAddBook(success: true)
                 
             }
-        }*/
+        }
+        
+        //db.collection("\(uid)").document(categoriaId).collection("livros").document("").delete()
     }
     
-    func retornaLivros() {
+    func retornaLivros(categoria: Categorias) {
         
         var livros = Array<Livros>()
-         /*
+        
         let db = Firestore.firestore()
         guard let uid = Auth.auth().currentUser?.uid else{
             return
         }
-         db.collection("\(uid)").document(categoria).getDocument(completion: <#T##FIRDocumentSnapshotBlock##FIRDocumentSnapshotBlock##(DocumentSnapshot?, Error?) -> Void#>) {(snapshot, err) in
+        
+        let categoriaId = categoria.ID
+        
+        db.collection("\(uid)").document(categoriaId).collection("livros").getDocuments {(snapshot, err) in
             if let err = err {
+                print(err)
                 self.readBookDelegate.onReadBook(success: false, livros: Array<Livros>())
             } else {
                 
                 for document in snapshot!.documents{
-                    let ID = document.documentID as! String
+                    let ID = document.documentID
                     let nome = document.get("nome") as! String
                     let autor = document.get("autor") as! String
                     let preco = document.get("preco") as! String
-                    
                     
                     let livro = Livros(ID: ID, nome: nome, autor: autor, preco: preco)
                     livros.append(livro)
@@ -254,6 +260,6 @@ class DataSingleton {
                 
                 self.readBookDelegate.onReadBook(success: true, livros: livros)
             }
-        }*/
+        }
     }
 }

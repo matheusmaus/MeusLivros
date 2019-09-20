@@ -12,6 +12,8 @@ class ListaTableViewController: UITableViewController, ReadBookDelegate {
 
     var livros: Array<Livros> = []
     
+    var categoria: Categorias!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,7 +30,10 @@ class ListaTableViewController: UITableViewController, ReadBookDelegate {
         self.tableView.dataSource = self
         
         DataSingleton.sharedInstance.readBookDelegate = self
-        DataSingleton.sharedInstance.retornaLivros();
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        DataSingleton.sharedInstance.retornaLivros(categoria: categoria)
     }
 
     func onReadBook(success: Bool, livros: Array<Livros>) {
@@ -36,44 +41,54 @@ class ListaTableViewController: UITableViewController, ReadBookDelegate {
             self.tableView.reloadData()
     }
     
-        override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "BooksDetailsCell", for: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BooksDetailsCell", for: indexPath)
 
-            cell.textLabel?.text = livros[indexPath.row].nome
-            cell.textLabel?.text = livros[indexPath.row].autor
-            cell.textLabel?.text = livros[indexPath.row].preco
+        cell.textLabel?.text = livros[indexPath.row].nome
+//        cell.textLabel?.text = livros[indexPath.row].autor
+//        cell.textLabel?.text = livros[indexPath.row].preco
 
-            return cell
-        }
+        return cell
+    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
-        override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            let count = livros.count
-            return count
-        }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let count = livros.count
+        return count
+    }
     
     // Mark: - Table view delegate //Swipes
     
-        override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+
+        let ignore = deleteAction(at: indexPath)
+        return UISwipeActionsConfiguration (actions: [ignore])
+    }
     
-            let ignore = deleteAction(at: indexPath)
-            return UISwipeActionsConfiguration (actions: [ignore])
+    func deleteAction (at indexPath: IndexPath) -> UIContextualAction {
+
+        let action = UIContextualAction(style: .destructive, title: "Excluir") { (action, view, completion) in
+            self.livros.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            completion(true)
         }
+
+        action.backgroundColor = .red
+
+        return action
+    }
     
-        func deleteAction (at indexPath: IndexPath) -> UIContextualAction {
-    
-            let action = UIContextualAction(style: .destructive, title: "Excluir") { (action, view, completion) in
-                self.livros.remove(at: indexPath.row)
-                self.tableView.deleteRows(at: [indexPath], with: .automatic)
-                completion(true)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AddBookViewController" {
+            guard let vc = segue.destination as? AddBookViewController else {
+                return
             }
-    
-            action.backgroundColor = .red
-    
-            return action
+            
+            vc.categoria = self.categoria
         }
+    }
 }

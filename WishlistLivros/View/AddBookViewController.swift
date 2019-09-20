@@ -10,6 +10,8 @@ import UIKit
 
 class AddBookViewController: UIViewController, AddBookDelegate {
     
+    var categoria: Categorias!
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -17,10 +19,6 @@ class AddBookViewController: UIViewController, AddBookDelegate {
     @IBOutlet weak var nomeLivro: UITextField!
     @IBOutlet weak var nomeAutor: UITextField!
     @IBOutlet weak var precco: UITextField!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
     
     @IBAction func onSave(_ sender: Any) {
         
@@ -44,7 +42,7 @@ class AddBookViewController: UIViewController, AddBookDelegate {
         }
         
         DataSingleton.sharedInstance.addBookDelegate = self
-        DataSingleton.sharedInstance.adicionaLivros (bookName!, autor: author!, preco: price!)
+        DataSingleton.sharedInstance.adicionaLivros (bookName!, autor: author!, preco: price!, categoria: self.categoria)
     }
     
     func onAddBook(success: Bool) {

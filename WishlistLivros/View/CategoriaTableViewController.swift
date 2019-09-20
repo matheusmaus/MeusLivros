@@ -80,10 +80,26 @@ class CategoriaTableViewController: UITableViewController, ReadCategoryDelegate 
         return action
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //pegar o nome do q foi clicado
-        print("You selected section: \(indexPath.section)")
-        print("You touched row: \(indexPath.row)")
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ListaTableViewController" {
+            guard let nav = segue.destination as? UINavigationController else {
+                return
+            }
+            
+            guard let vc = nav.viewControllers.first as? ListaTableViewController else {
+                return
+            }
+            
+            guard let indexPath = self.tableView.indexPathForSelectedRow else {
+                return
+            }
+            
+            let categoria = categorias[indexPath.row]
+            
+            print(categoria)
+            print(categorias)
+            
+            vc.categoria = categoria
+        }
     }
-
 }
