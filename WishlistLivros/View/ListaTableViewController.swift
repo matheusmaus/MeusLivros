@@ -42,11 +42,11 @@ class ListaTableViewController: UITableViewController, ReadBookDelegate {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BooksDetailsCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BooksDetailsCell", for: indexPath) as! LivroTableViewCell
 
-        cell.textLabel?.text = livros[indexPath.row].nome
-//        cell.textLabel?.text = livros[indexPath.row].autor
-//        cell.textLabel?.text = livros[indexPath.row].preco
+        cell.tituloLabel.text = livros[indexPath.row].nome
+        cell.autorLabel.text = livros[indexPath.row].autor
+        cell.valorLabel.text = livros[indexPath.row].preco
 
         return cell
     }
@@ -71,7 +71,10 @@ class ListaTableViewController: UITableViewController, ReadBookDelegate {
     
     func deleteAction (at indexPath: IndexPath) -> UIContextualAction {
 
+        let livro = livros [indexPath.row]
+        
         let action = UIContextualAction(style: .destructive, title: "Excluir") { (action, view, completion) in
+            DataSingleton.sharedInstance.deleteLivros(categoria: self.categoria, livro: livro)
             self.livros.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
             completion(true)

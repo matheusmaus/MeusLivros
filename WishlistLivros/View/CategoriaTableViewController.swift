@@ -32,7 +32,7 @@ class CategoriaTableViewController: UITableViewController, ReadCategoryDelegate 
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        DataSingleton.sharedInstance.retornaCategorias();
+        DataSingleton.sharedInstance.retornaCategorias()
 
     }
     
@@ -68,8 +68,11 @@ class CategoriaTableViewController: UITableViewController, ReadCategoryDelegate 
     }
 
     func deleteAction (at indexPath: IndexPath) -> UIContextualAction {
+        
+        let categoria = categorias[indexPath.row]
 
         let action = UIContextualAction(style: .destructive, title: "Excluir") { (action, view, completion) in
+            DataSingleton.sharedInstance.deleteCategorias(categoria: categoria)
             self.categorias.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
             completion(true)

@@ -19,9 +19,9 @@ protocol ValidaEmailSenhaDelegate: class {
     func onValidaEmailSenha(valido: Bool)
 }
 
-//protocol LogoutDelegate: class {
-//    func onLogout(valido: Bool)
-//}
+protocol LogoutDelegate: class {
+    func onLogout(valido: Bool)
+}
 
 protocol AddCategoryDelegate: class {
     func onAddCategory(success: Bool)
@@ -29,6 +29,10 @@ protocol AddCategoryDelegate: class {
 
 protocol ReadCategoryDelegate: class {
     func onReadCategory(success: Bool, categorias: Array<Categorias>)
+}
+
+protocol DeleteCategoryDelegate: class {
+    func onDeleteCategory(success: Bool, categorias: Array<Categorias>)
 }
 
 protocol AddBookDelegate: class {
@@ -39,16 +43,24 @@ protocol ReadBookDelegate: class {
     func onReadBook(success: Bool, livros: Array<Livros>)
 }
 
+protocol DeleteBookDelegate: class {
+    func onDeleteBook(success: Bool, livros: Array<Livros>)
+}
+
 class DataSingleton {
     
     var validaEmailDelegate: ValidaEmailDelegate!
     var validaEmailSenhaDelegate: ValidaEmailSenhaDelegate!
+    
     var addCategoryDelegate: AddCategoryDelegate!
     var readCategoryDelegate: ReadCategoryDelegate!
+    var deleteCategoryDelegate: DeleteCategoryDelegate!
+    
     var addBookDelegate: AddBookDelegate!
     var readBookDelegate: ReadBookDelegate!
+    var deleteBookDelegate: DeleteBookDelegate!
     
-//    var logoutDelegate: LogoutDelegate!
+    var logoutDelegate: LogoutDelegate!
     
     private let storedEmail = "email"
     private let storedPassword = "senha"
@@ -192,7 +204,7 @@ class DataSingleton {
             } else {
 
                 for document in snapshot!.documents{
-                    let ID = document.documentID as String
+                    let ID = document.documentID
                     let nomeCategoria = document.get("nome") as! String
 
                     let categoria = Categorias(ID: ID, nomeCategoria: nomeCategoria)
@@ -202,6 +214,21 @@ class DataSingleton {
                 self.readCategoryDelegate.onReadCategory(success: true, categorias: categorias)
             }
         }
+    }
+    
+    func deleteCategorias(categoria: Categorias) {
+        
+        //var categorias = Array<Categorias>()
+        
+        guard let uid = Auth.auth().currentUser?.uid else{
+            return
+        }
+        let db = Firestore.firestore()
+        
+        let categoriaId = categoria.ID
+        
+        db.collection("\(uid)").document(categoriaId).delete()
+        
     }
     
     func adicionaLivros(_ nome: String, autor: String, preco: String, categoria: Categorias) {
@@ -261,5 +288,18 @@ class DataSingleton {
                 self.readBookDelegate.onReadBook(success: true, livros: livros)
             }
         }
+    }
+    
+    func deleteLivros(categoria: Categorias, livro: Livros) {
+        
+        guard let uid = Auth.auth().currentUser?.uid else{
+            return
+        }
+        let db = Firestore.firestore()
+        
+        let categoriaId = categoria.ID
+        let livroId = livro.ID
+        db.collection("\(uid)").document(categoriaId).collection("livros").document(livroId).delete()
+        
     }
 }

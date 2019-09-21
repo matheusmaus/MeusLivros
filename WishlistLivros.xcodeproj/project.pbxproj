@@ -16,6 +16,7 @@
 		852CB250231E9C1D0024444C /* SenhaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852CB24F231E9C1D0024444C /* SenhaViewController.swift */; };
 		852CB254231EA3140024444C /* CategoriaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852CB253231EA3140024444C /* CategoriaTableViewController.swift */; };
 		852CB256231EA3230024444C /* ListaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852CB255231EA3230024444C /* ListaTableViewController.swift */; };
+		8571025A23365B7F0000E232 /* LivroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8571025923365B7F0000E232 /* LivroTableViewCell.swift */; };
 		85A7F4522323E480000FFFCF /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A7F4512323E480000FFFCF /* Login.swift */; };
 		85A7F4542323E7F5000FFFCF /* Livros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A7F4532323E7F5000FFFCF /* Livros.swift */; };
 		85A7F4562323E80C000FFFCF /* Categorias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A7F4552323E80C000FFFCF /* Categorias.swift */; };
@@ -40,6 +41,7 @@
 		852CB24F231E9C1D0024444C /* SenhaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenhaViewController.swift; sourceTree = "<group>"; };
 		852CB253231EA3140024444C /* CategoriaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriaTableViewController.swift; sourceTree = "<group>"; };
 		852CB255231EA3230024444C /* ListaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaTableViewController.swift; sourceTree = "<group>"; };
+		8571025923365B7F0000E232 /* LivroTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivroTableViewCell.swift; sourceTree = "<group>"; };
 		85A7F4512323E480000FFFCF /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		85A7F4532323E7F5000FFFCF /* Livros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Livros.swift; sourceTree = "<group>"; };
 		85A7F4552323E80C000FFFCF /* Categorias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categorias.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				8504D0D4232A7FFB003B417D /* AddBookViewController.swift */,
 				85EBB52E232D77E5002267B6 /* LittleBGView.swift */,
 				85EBB530232D780E002267B6 /* LittleBGTwo.swift */,
+				8571025923365B7F0000E232 /* LivroTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 			files = (
 				85B873A9231E8E0000D3AA29 /* WishlistLivros.xcdatamodeld in Sources */,
 				85A7F4522323E480000FFFCF /* Login.swift in Sources */,
+				8571025A23365B7F0000E232 /* LivroTableViewCell.swift in Sources */,
 				852CB24E231E9C0F0024444C /* CriarContaViewController.swift in Sources */,
 				8504D0D5232A7FFB003B417D /* AddBookViewController.swift in Sources */,
 				852CB254231EA3140024444C /* CategoriaTableViewController.swift in Sources */,
@@ -361,7 +365,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -416,7 +420,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -434,6 +438,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GF6JBMPR58;
 				INFOPLIST_FILE = WishlistLivros/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -453,6 +458,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GF6JBMPR58;
 				INFOPLIST_FILE = WishlistLivros/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
