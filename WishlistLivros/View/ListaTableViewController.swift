@@ -32,6 +32,8 @@ class ListaTableViewController: UITableViewController, ReadBookDelegate {
         DataSingleton.sharedInstance.readBookDelegate = self
     }
     
+    // MARK: - Alimentar Table View
+    
     override func viewWillAppear(_ animated: Bool) {
         DataSingleton.sharedInstance.retornaLivros(categoria: categoria)
     }
@@ -61,7 +63,7 @@ class ListaTableViewController: UITableViewController, ReadBookDelegate {
         return count
     }
     
-    // Mark: - Table view delegate //Swipes
+    // MARK: - Swipes + Excluir
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 
@@ -84,6 +86,8 @@ class ListaTableViewController: UITableViewController, ReadBookDelegate {
 
         return action
     }
+    
+    // MARK: - Encaminhar
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddBookViewController" {

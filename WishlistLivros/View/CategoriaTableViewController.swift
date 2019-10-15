@@ -19,6 +19,7 @@ class CategoriaTableViewController: UITableViewController, ReadCategoryDelegate 
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         navigationController?.navigationBar.barTintColor = UIColor(red: 0.0/255.0, green: 168.0/255.0, blue: 197.0/255.0, alpha: 1.0)
+        navigationController?.navigationBar.tintColor = UIColor(red: 0.0/255.0, green: 168.0/255.0, blue: 197.0/255.0, alpha: 1.0)
         self.navigationController?.navigationBar.barStyle = .black
 
         let spinner = UIActivityIndicatorView(style: .gray)
@@ -30,6 +31,8 @@ class CategoriaTableViewController: UITableViewController, ReadCategoryDelegate 
         DataSingleton.sharedInstance.readCategoryDelegate = self
         
     }
+    
+    // MARK: - Alimentar Table View
     
     override func viewWillAppear(_ animated: Bool) {
         DataSingleton.sharedInstance.retornaCategorias()
@@ -50,7 +53,6 @@ class CategoriaTableViewController: UITableViewController, ReadCategoryDelegate 
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
@@ -59,7 +61,7 @@ class CategoriaTableViewController: UITableViewController, ReadCategoryDelegate 
         return count
     }
     
-//     Mark: - Table view delegate //Swipes
+    // MARK: - Swipes + Excluir
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 
@@ -82,6 +84,8 @@ class CategoriaTableViewController: UITableViewController, ReadCategoryDelegate 
 
         return action
     }
+    
+    // MARK: - Encaminhar
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ListaTableViewController" {

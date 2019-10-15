@@ -40,12 +40,17 @@ class SenhaViewController: UIViewController, ValidaEmailSenhaDelegate {
         self.view.layer.insertSublayer(gradientLayer, at:0)
     }
     
+    // MARK: - Botão Login
+    
     @IBAction func onBtnEntrar(_ sender: Any) {
         let senha = self.labelSenha.text
         
         DataSingleton.sharedInstance.validaEmailSenhaDelegate = self
         DataSingleton.sharedInstance.validaEmailSenha(email, senha!)
+        
     }
+    
+    // MARK: - Valida Login
     
     func onValidaEmailSenha(valido: Bool) {
         let senha = self.labelSenha.text

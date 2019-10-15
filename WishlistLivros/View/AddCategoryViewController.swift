@@ -19,6 +19,8 @@ class AddCategoryViewController: UIViewController, AddCategoryDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    // MARK: - Salvar Categoria
 
     @IBAction func onSalvar(_ sender: Any) {
         
@@ -32,6 +34,8 @@ class AddCategoryViewController: UIViewController, AddCategoryDelegate {
         DataSingleton.sharedInstance.addCategoryDelegate = self
         DataSingleton.sharedInstance.adicionaCategorias(name!)
     }
+    
+    // MARK: - Adicionar Categoria
     
     func onAddCategory(success: Bool) {
         if (success == true) {

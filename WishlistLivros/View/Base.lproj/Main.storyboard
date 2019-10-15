@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nBo-ZJ-ONa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nBo-ZJ-ONa">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,7 +10,7 @@
         <!--Email View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="emailViewController" id="BYZ-38-t0r" customClass="EmailViewController" customModule="WishlistLivros" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="emailViewController" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="EmailViewController" customModule="WishlistLivros" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,7 +55,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="labelEmail" destination="dRU-es-2wa" id="iSf-PA-jrE"/>
-                        <segue destination="4Qz-9K-qIw" kind="show" identifier="segueNovaConta" id="mJW-2P-sOe"/>
+                        <segue destination="4Qz-9K-qIw" kind="showDetail" identifier="segueNovaConta" id="mJW-2P-sOe"/>
                         <segue destination="jcn-sg-ssf" kind="show" identifier="segueSenha" id="x3B-i1-r2R"/>
                     </connections>
                 </viewController>
@@ -67,7 +66,7 @@
         <!--Criar Conta View Controller-->
         <scene sceneID="tse-7w-1DU">
             <objects>
-                <viewController id="4Qz-9K-qIw" customClass="CriarContaViewController" customModule="WishlistLivros" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="4Qz-9K-qIw" customClass="CriarContaViewController" customModule="WishlistLivros" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="VEe-x6-Ixl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -108,6 +107,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                         <viewLayoutGuide key="safeArea" id="3o5-1t-izQ"/>
                     </view>
+                    <navigationItem key="navigationItem" id="VRC-rP-A31"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="labelPass" destination="nvj-U7-QPr" id="AaB-7x-2UF"/>
@@ -121,7 +121,7 @@
         <!--Categorias-->
         <scene sceneID="WDU-GF-Uml">
             <objects>
-                <tableViewController id="vlJ-ir-aIQ" customClass="CategoriaTableViewController" customModule="WishlistLivros" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" id="vlJ-ir-aIQ" customClass="CategoriaTableViewController" customModule="WishlistLivros" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Y5N-GL-Bsr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -131,11 +131,11 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zDE-ic-RaC" id="3eI-zc-Alw">
-                                    <rect key="frame" x="0.0" y="0.0" width="382.66666666666669" height="60"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Categoria" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hqs-NH-2O5">
-                                            <rect key="frame" x="20" y="0.0" width="354.66666666666669" height="60"/>
+                                            <rect key="frame" x="20" y="0.0" width="355" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                             <nil key="textColor"/>
@@ -245,7 +245,7 @@
         <!--Livros-->
         <scene sceneID="hui-M3-Ybd">
             <objects>
-                <tableViewController id="F2b-P2-K9b" customClass="ListaTableViewController" customModule="WishlistLivros" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" id="F2b-P2-K9b" customClass="ListaTableViewController" customModule="WishlistLivros" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="KEN-nC-1Fb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -318,7 +318,7 @@
         <!--Senha View Controller-->
         <scene sceneID="VuC-U4-mUr">
             <objects>
-                <viewController id="jcn-sg-ssf" customClass="SenhaViewController" customModule="WishlistLivros" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="jcn-sg-ssf" customClass="SenhaViewController" customModule="WishlistLivros" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hzE-sT-dGj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -359,6 +359,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                         <viewLayoutGuide key="safeArea" id="bOQ-Si-uCG"/>
                     </view>
+                    <navigationItem key="navigationItem" id="rKJ-WB-yKu"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="labelSenha" destination="mbG-KG-ymI" id="yCn-Uu-uQ0"/>
@@ -390,8 +391,9 @@
         <!--Navigation Controller-->
         <scene sceneID="n7d-K1-TDz">
             <objects>
-                <navigationController storyboardIdentifier="navCtrlCat" automaticallyAdjustsScrollViewInsets="NO" id="M3J-mI-8WI" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navCtrlCat" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="M3J-mI-8WI" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="fod-ka-JLU"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BdD-ml-hPv">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -494,8 +496,9 @@
         <!--Navigation Controller-->
         <scene sceneID="ax0-2Y-OdX">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qqv-hL-rEi" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="Qqv-hL-rEi" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Zq3-aK-vLv"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kIu-Yx-5TW">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -511,7 +514,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bfW-Bb-ykT"/>
-        <segue reference="B35-Pz-TId"/>
+        <segue reference="M9i-1O-16u"/>
+        <segue reference="jfc-ah-YVx"/>
     </inferredMetricsTieBreakers>
 </document>

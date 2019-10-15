@@ -26,6 +26,8 @@ class EmailViewController: UIViewController, ValidaEmailDelegate {
         super.viewWillAppear(animated)
     }
     
+    // MARK: - Botão Próximo
+    
     @IBAction func onBtnNext(_ sender: Any) {
         let email = self.labelEmail.text
         
@@ -38,6 +40,8 @@ class EmailViewController: UIViewController, ValidaEmailDelegate {
         DataSingleton.sharedInstance.validaEmail(email!)
     }
     
+    // MARK: - Validação / Telas Personalizadas
+    
     func onValidaEmail(valido: Bool, emailValido: Bool) {
         if (valido == true && emailValido == true) {
             self.performSegue(withIdentifier: "segueSenha", sender: true)
@@ -48,6 +52,7 @@ class EmailViewController: UIViewController, ValidaEmailDelegate {
         }
     }
     
+    // MARK: - Encaminhar
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

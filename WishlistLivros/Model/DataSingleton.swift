@@ -19,9 +19,9 @@ protocol ValidaEmailSenhaDelegate: class {
     func onValidaEmailSenha(valido: Bool)
 }
 
-protocol LogoutDelegate: class {
-    func onLogout(valido: Bool)
-}
+//protocol LogoutDelegate: class {
+//    func onLogout(valido: Bool)
+//}
 
 protocol AddCategoryDelegate: class {
     func onAddCategory(success: Bool)
@@ -60,7 +60,7 @@ class DataSingleton {
     var readBookDelegate: ReadBookDelegate!
     var deleteBookDelegate: DeleteBookDelegate!
     
-    var logoutDelegate: LogoutDelegate!
+//    var logoutDelegate: LogoutDelegate!
     
     private let storedEmail = "email"
     private let storedPassword = "senha"
@@ -96,6 +96,8 @@ class DataSingleton {
         }
     }
     
+    // MARK: - Valida eMail
+    
     func validaEmail(_ email: String) {
         let this = self;
         Auth.auth().signIn(withEmail: email, password: " ") { (user, error) in
@@ -116,6 +118,8 @@ class DataSingleton {
             }
         }
     }
+    
+    // MARK: - Valida Senha
     
     func validaEmailSenha(_ email: String, _ senha: String) {
         let this = self;
@@ -140,11 +144,15 @@ class DataSingleton {
         }
     }
     
-    public func logout() {
-        let defaults = UserDefaults.standard
-        defaults.removeObject(forKey: self.storedEmail)
-        defaults.removeObject(forKey: self.storedPassword)
-    }
+    // MARK: - Logout
+    
+//    public func logout() {
+//        let defaults = UserDefaults.standard
+//        defaults.removeObject(forKey: self.storedEmail)
+//        defaults.removeObject(forKey: self.storedPassword)
+//    }
+    
+    // MARK: - Login Defaults
     
     public func setLoginDefaults(_ email: String, _ senha: String) {
         
@@ -169,6 +177,8 @@ class DataSingleton {
         return Login()
     }
     
+    // MARK: - Add Categoria
+    
     func adicionaCategorias(_ categoryName: String) {
 
         let db = Firestore.firestore()
@@ -187,6 +197,8 @@ class DataSingleton {
             }
         }
     }
+    
+    // MARK: - Retorna Categoria
 
     func retornaCategorias() {
 
@@ -216,6 +228,8 @@ class DataSingleton {
         }
     }
     
+    // MARK: - Delete Categoria
+    
     func deleteCategorias(categoria: Categorias) {
         
         //var categorias = Array<Categorias>()
@@ -230,6 +244,8 @@ class DataSingleton {
         db.collection("\(uid)").document(categoriaId).delete()
         
     }
+    
+    // MARK: - Add Livro
     
     func adicionaLivros(_ nome: String, autor: String, preco: String, categoria: Categorias) {
         
@@ -257,6 +273,8 @@ class DataSingleton {
         
         //db.collection("\(uid)").document(categoriaId).collection("livros").document("").delete()
     }
+    
+    // MARK: - Retorna Livro
     
     func retornaLivros(categoria: Categorias) {
         
@@ -289,6 +307,8 @@ class DataSingleton {
             }
         }
     }
+    
+    // MARK: - Delete Livro
     
     func deleteLivros(categoria: Categorias, livro: Livros) {
         

@@ -39,7 +39,10 @@ class CriarContaViewController: UIViewController {
         gradientLayer.frame = self.view.bounds
         
         self.view.layer.insertSublayer(gradientLayer, at:0)
+        
     }
+    
+    // MARK: - Botão Criar Conta
     
     @IBAction func onBtnNewAccount(_ sender: Any) {
         let senha = self.labelPass.text

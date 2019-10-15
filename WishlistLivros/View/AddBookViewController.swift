@@ -20,6 +20,8 @@ class AddBookViewController: UIViewController, AddBookDelegate {
     @IBOutlet weak var nomeAutor: UITextField!
     @IBOutlet weak var precco: UITextField!
     
+    // MARK: - Salvar Livro
+    
     @IBAction func onSave(_ sender: Any) {
         
         let bookName = self.nomeLivro.text
@@ -44,6 +46,8 @@ class AddBookViewController: UIViewController, AddBookDelegate {
         DataSingleton.sharedInstance.addBookDelegate = self
         DataSingleton.sharedInstance.adicionaLivros (bookName!, autor: author!, preco: price!, categoria: self.categoria)
     }
+    
+    // MARK: - Adicionar Livro
     
     func onAddBook(success: Bool) {
         if (success == true) {
