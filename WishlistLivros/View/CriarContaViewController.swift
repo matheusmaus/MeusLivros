@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Lottie
 import Firebase
 
 class CriarContaViewController: UIViewController {
@@ -19,14 +20,26 @@ class CriarContaViewController: UIViewController {
     
     @IBOutlet weak var labelPass: UITextField!
     
+    @IBOutlet weak var animationCriar: AnimationView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        startLottie()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         setGradientBackground()
         super.viewWillAppear(animated)
     }
+    
+    // MARK: - Lottie
+     
+     func startLottie() {
+         
+         animationCriar.animation = Animation.named("772-bookmark-animation")
+         animationCriar.loopMode = .loop
+         animationCriar.play()
+     }
     
     
     func setGradientBackground() {
@@ -47,19 +60,27 @@ class CriarContaViewController: UIViewController {
     @IBAction func onBtnNewAccount(_ sender: Any) {
         let senha = self.labelPass.text
         
+        Analytics.logEvent("nova_conta_btn", parameters: nil)
+        
         Auth.auth().createUser(withEmail: email, password: senha!) { (user, error) in
             
             if let error = error, (error as NSError).code == 17008 {
                 print(error)
                 DataSingleton.sharedInstance.toastMessage("Email inválido")
+                
+                Analytics.logEvent("nc_email_invalido", parameters: nil)
             }
             else if let error = error {
                 DataSingleton.sharedInstance.toastMessage("Erro ao criar o usuário. Talvez ele já exista no banco de dados.")
                 print(error)
+                
+                Analytics.logEvent("nc_email_taken", parameters: nil)
             }
             else {
                 DataSingleton.sharedInstance.setLoginDefaults(self.email, senha!)
                 self.performSegue(withIdentifier: "segueMain2", sender: true)
+                
+                Analytics.logEvent("criar_conta_main", parameters: nil)
             }
         }
     }

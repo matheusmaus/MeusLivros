@@ -19,9 +19,9 @@ protocol ValidaEmailSenhaDelegate: class {
     func onValidaEmailSenha(valido: Bool)
 }
 
-//protocol LogoutDelegate: class {
-//    func onLogout(valido: Bool)
-//}
+protocol LogoutDelegate: class {
+    func onLogout(valido: Bool)
+}
 
 protocol AddCategoryDelegate: class {
     func onAddCategory(success: Bool)
@@ -60,7 +60,7 @@ class DataSingleton {
     var readBookDelegate: ReadBookDelegate!
     var deleteBookDelegate: DeleteBookDelegate!
     
-//    var logoutDelegate: LogoutDelegate!
+    var logoutDelegate: LogoutDelegate!
     
     private let storedEmail = "email"
     private let storedPassword = "senha"
@@ -146,11 +146,11 @@ class DataSingleton {
     
     // MARK: - Logout
     
-//    public func logout() {
-//        let defaults = UserDefaults.standard
-//        defaults.removeObject(forKey: self.storedEmail)
-//        defaults.removeObject(forKey: self.storedPassword)
-//    }
+    public func logout() {
+        let defaults = UserDefaults.standard
+        defaults.removeObject(forKey: self.storedEmail)
+        defaults.removeObject(forKey: self.storedPassword)
+    }
     
     // MARK: - Login Defaults
     

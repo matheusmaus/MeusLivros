@@ -47,6 +47,10 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VhZ-pb-i5o" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="154" y="640" width="240" height="222"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                         <viewLayoutGuide key="safeArea" id="3D6-eO-3Nd"/>
@@ -54,6 +58,7 @@
                     <navigationItem key="navigationItem" id="XDu-Ti-GCp"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="animationEmail" destination="VhZ-pb-i5o" id="k7v-YX-4PF"/>
                         <outlet property="labelEmail" destination="dRU-es-2wa" id="iSf-PA-jrE"/>
                         <segue destination="4Qz-9K-qIw" kind="showDetail" identifier="segueNovaConta" id="mJW-2P-sOe"/>
                         <segue destination="jcn-sg-ssf" kind="show" identifier="segueSenha" id="x3B-i1-r2R"/>
@@ -103,6 +108,10 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nAA-Lv-Kdj" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="82" y="566" width="250" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                         <viewLayoutGuide key="safeArea" id="3o5-1t-izQ"/>
@@ -110,6 +119,7 @@
                     <navigationItem key="navigationItem" id="VRC-rP-A31"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="animationCriar" destination="nAA-Lv-Kdj" id="kHv-Zo-LL1"/>
                         <outlet property="labelPass" destination="nvj-U7-QPr" id="AaB-7x-2UF"/>
                         <segue destination="M3J-mI-8WI" kind="show" identifier="segueMain2" id="b9O-GS-9s8"/>
                     </connections>
@@ -117,6 +127,82 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iNV-LR-bUw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1826" y="-525"/>
+        </scene>
+        <!--Perfil View Controller-->
+        <scene sceneID="Em2-hY-pKC">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="Ajy-YL-Bbi" userLabel="Perfil View Controller" customClass="PerfilViewController" customModule="WishlistLivros" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QJA-yY-Kp5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgProfile" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tFb-2N-txw">
+                                <rect key="frame" x="0.0" y="-55" width="414" height="897"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpa-za-3d0">
+                                <rect key="frame" x="151" y="342" width="112" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="buttonEdit">
+                                    <color key="titleShadowColor" red="0.18635174630000001" green="0.1745328307" blue="0.35295891759999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ellipse" translatesAutoresizingMaskIntoConstraints="NO" id="8ap-rL-N7q">
+                                <rect key="frame" x="70" y="44" width="275" height="157"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="1Q8-M6-jNX">
+                                <rect key="frame" x="87" y="58" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome do Usuário" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmU-Gg-voZ">
+                                <rect key="frame" x="87" y="221" width="258" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="email@dousuario.com.br" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8G5-Vg-NrP">
+                                <rect key="frame" x="87" y="251" width="258" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Editar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="15l-iN-ixo">
+                                <rect key="frame" x="185" y="354" width="45" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uJC-mm-Hs6">
+                                <rect key="frame" x="20" y="20" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onBtnLogout:" destination="yDV-hS-yb6" eventType="touchUpInside" id="7Kg-fu-aa9"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2hP-E6-w8S" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="20" y="484" width="374" height="288"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.18635174630000001" green="0.1745328307" blue="0.35295891759999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="ZH3-eb-jpw"/>
+                    </view>
+                    <connections>
+                        <outlet property="animationProfile" destination="2hP-E6-w8S" id="sfa-Tg-nQs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hzP-KJ-uDR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="yDV-hS-yb6" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="4595.652173913044" y="-1019.1964285714286"/>
         </scene>
         <!--Categorias-->
         <scene sceneID="WDU-GF-Uml">
@@ -154,8 +240,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Categorias" id="e00-ch-Ohv">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="E5x-hh-kh2">
+                        <barButtonItem key="leftBarButtonItem" image="person.crop.circle.fill" style="plain" id="E5x-hh-kh2">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="Ajy-YL-Bbi" kind="popoverPresentation" popoverAnchorBarButtonItem="E5x-hh-kh2" id="0WB-yE-dFr">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="KCg-vA-85H">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -181,18 +272,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VuM-tl-seC" customClass="LittleBGView" customModule="WishlistLivros" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Adicionar Categoria" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JHe-JR-lLW">
-                                        <rect key="frame" x="53" y="174" width="308" height="51"/>
+                                        <rect key="frame" x="53" y="124" width="308" height="51"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RjW-QB-lQj">
-                                        <rect key="frame" x="29" y="51" width="45" height="33"/>
+                                        <rect key="frame" x="19" y="8" width="45" height="33"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -201,11 +292,15 @@
                                             <segue destination="M3J-mI-8WI" kind="show" id="SZ6-25-4DH"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jsW-h5-Ca7" customClass="AnimationView" customModule="Lottie">
+                                        <rect key="frame" x="82" y="554" width="250" height="220"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BxI-QN-9n2">
-                                <rect key="frame" x="28" y="439" width="359" height="49"/>
+                                <rect key="frame" x="28" y="419" width="359" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
@@ -223,7 +318,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Digite a categoria" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XnR-PL-bNK">
-                                <rect key="frame" x="20" y="324" width="374" height="50"/>
+                                <rect key="frame" x="20" y="274" width="374" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -235,6 +330,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="a4f-Ci-iFV"/>
                     <connections>
+                        <outlet property="animationCategory" destination="jsW-h5-Ca7" id="NRE-jr-81P"/>
                         <outlet property="nomeCategoria" destination="XnR-PL-bNK" id="nbt-t6-ADb"/>
                     </connections>
                 </viewController>
@@ -355,6 +451,10 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <view contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kb7-NE-RGH" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="223" y="112" width="171" height="147"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                         <viewLayoutGuide key="safeArea" id="bOQ-Si-uCG"/>
@@ -363,12 +463,13 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="labelSenha" destination="mbG-KG-ymI" id="yCn-Uu-uQ0"/>
+                        <outlet property="senhaAnimation" destination="Kb7-NE-RGH" id="gas-Zh-NOt"/>
                         <segue destination="M3J-mI-8WI" kind="show" identifier="segueMain" id="jfc-ah-YVx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jkd-PC-C5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1825" y="138"/>
+            <point key="canvasLocation" x="1824.6376811594205" y="137.94642857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yBW-nI-Fzd">
@@ -416,18 +517,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FWC-Pt-M0k" customClass="LittleBGTwo" customModule="WishlistLivros" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Adicionar Livro" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LPt-u2-EyO">
-                                        <rect key="frame" x="53" y="154" width="308" height="51"/>
+                                        <rect key="frame" x="53" y="119" width="308" height="51"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="op8-fw-GLG">
-                                        <rect key="frame" x="29" y="51" width="45" height="33"/>
+                                        <rect key="frame" x="20" y="8" width="45" height="33"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -437,28 +538,28 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Digite o nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="63i-ii-p52">
-                                        <rect key="frame" x="20" y="308" width="374" height="50"/>
+                                        <rect key="frame" x="20" y="248" width="374" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" textContentType="name"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Digite o autor" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ozI-tQ-7Ah">
-                                        <rect key="frame" x="20" y="366" width="374" height="50"/>
+                                        <rect key="frame" x="20" y="306" width="374" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" textContentType="name"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Digite o preço" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4hM-0H-r9Y">
-                                        <rect key="frame" x="20" y="424" width="374" height="50"/>
+                                        <rect key="frame" x="20" y="364" width="374" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZA-Z6-Eor">
-                                        <rect key="frame" x="28" y="540" width="359" height="49"/>
+                                        <rect key="frame" x="28" y="505" width="359" height="49"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
@@ -475,6 +576,10 @@
                                             <action selector="onSave:" destination="oqg-sI-6Uf" eventType="touchUpInside" id="rgA-lJ-8lY"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="10J-pL-G3d" customClass="AnimationView" customModule="Lottie">
+                                        <rect key="frame" x="20" y="600" width="200" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -484,6 +589,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="z9S-ZF-tvn"/>
                     <connections>
+                        <outlet property="animationBook" destination="10J-pL-G3d" id="H8E-5J-DHT"/>
                         <outlet property="nomeAutor" destination="ozI-tQ-7Ah" id="gU6-8t-LmE"/>
                         <outlet property="nomeLivro" destination="63i-ii-p52" id="7CP-Bg-T85"/>
                         <outlet property="precco" destination="4hM-0H-r9Y" id="fFi-UV-xUx"/>
@@ -513,6 +619,13 @@
             <point key="canvasLocation" x="5634.7826086956529" y="-243.08035714285714"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="avatar" width="128" height="128"/>
+        <image name="bgProfile" width="375" height="816"/>
+        <image name="buttonEdit" width="112" height="47"/>
+        <image name="ellipse" width="165" height="165"/>
+        <image name="person.crop.circle.fill" width="17" height="17"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="M9i-1O-16u"/>
         <segue reference="jfc-ah-YVx"/>

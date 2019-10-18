@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Lottie
+import Firebase
 
 class AddCategoryViewController: UIViewController, AddCategoryDelegate {
     
@@ -16,8 +18,20 @@ class AddCategoryViewController: UIViewController, AddCategoryDelegate {
     
     @IBOutlet weak var nomeCategoria: UITextField!
     
+    @IBOutlet weak var animationCategory: AnimationView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        startLottie()
+    }
+    
+    // MARK: - Lottie
+    
+    func startLottie() {
+        
+        animationCategory.animation = Animation.named("6126-chouette-famille-pricing-2")
+        animationCategory.loopMode = .loop
+        animationCategory.play()
     }
     
     // MARK: - Salvar Categoria

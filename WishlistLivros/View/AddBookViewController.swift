@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Lottie
+import Firebase
 
 class AddBookViewController: UIViewController, AddBookDelegate {
     
@@ -19,6 +21,22 @@ class AddBookViewController: UIViewController, AddBookDelegate {
     @IBOutlet weak var nomeLivro: UITextField!
     @IBOutlet weak var nomeAutor: UITextField!
     @IBOutlet weak var precco: UITextField!
+    
+    @IBOutlet weak var animationBook: AnimationView!
+    
+    override func viewDidLoad() {
+           super.viewDidLoad()
+        startLottie()
+       }
+    
+    // MARK: - Lottie
+    
+    func startLottie() {
+        
+        animationBook.animation = Animation.named("772-bookmark-animation")
+        animationBook.loopMode = .loop
+        animationBook.play()
+    }
     
     // MARK: - Salvar Livro
     

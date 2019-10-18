@@ -32,6 +32,8 @@ class CategoriaTableViewController: UITableViewController, ReadCategoryDelegate 
         
     }
     
+    
+    
     // MARK: - Alimentar Table View
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,6 +44,8 @@ class CategoriaTableViewController: UITableViewController, ReadCategoryDelegate 
     func onReadCategory(success: Bool, categorias: Array<Categorias>) {
         self.categorias = categorias
         self.tableView.reloadData()
+        
+        
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

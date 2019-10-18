@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Lottie
+import Firebase
 
 class EmailViewController: UIViewController, ValidaEmailDelegate {
     
@@ -15,15 +17,25 @@ class EmailViewController: UIViewController, ValidaEmailDelegate {
     }
     
     @IBOutlet weak var labelEmail: UITextField!
+    @IBOutlet weak var animationEmail: AnimationView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        startLottie()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         setGradientBackground()
         super.viewWillAppear(animated)
+    }
+    
+    // MARK: - Lottie
+    
+    func startLottie() {
+        
+        animationEmail.animation = Animation.named("772-bookmark-animation")
+        animationEmail.loopMode = .loop
+        animationEmail.play()
     }
     
     // MARK: - Botão Próximo
@@ -33,6 +45,8 @@ class EmailViewController: UIViewController, ValidaEmailDelegate {
         
         if ( email?.count == 0 ) {
             DataSingleton.sharedInstance.toastMessage("Informe o e-mail")
+            
+            Analytics.logEvent("email_login_btn", parameters: nil)
             return
     }
         
@@ -45,10 +59,15 @@ class EmailViewController: UIViewController, ValidaEmailDelegate {
     func onValidaEmail(valido: Bool, emailValido: Bool) {
         if (valido == true && emailValido == true) {
             self.performSegue(withIdentifier: "segueSenha", sender: true)
+            Analytics.logEvent("segue_senha", parameters: nil)
+            
         } else if (valido == false && emailValido == true) {
             self.performSegue(withIdentifier: "segueNovaConta", sender: true)
+            Analytics.logEvent("segue_novaconta", parameters: nil)
+            
         } else {
             DataSingleton.sharedInstance.toastMessage("E-mail inválido")
+            Analytics.logEvent("email_invalido", parameters: nil)
         }
     }
     
