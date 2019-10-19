@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ListaTableViewController: UITableViewController, ReadBookDelegate {
 
@@ -31,6 +32,11 @@ class ListaTableViewController: UITableViewController, ReadBookDelegate {
         
         DataSingleton.sharedInstance.readBookDelegate = self
     }
+    
+    @IBAction func openAddBookBtn(_ sender: Any) {
+        Analytics.logEvent("open_add_book", parameters: [:])
+    }
+    
     
     // MARK: - Alimentar Table View
     
@@ -80,6 +86,8 @@ class ListaTableViewController: UITableViewController, ReadBookDelegate {
             self.livros.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
             completion(true)
+            
+            Analytics.logEvent("swipe_delete_book", parameters: [:])
         }
 
         action.backgroundColor = .red

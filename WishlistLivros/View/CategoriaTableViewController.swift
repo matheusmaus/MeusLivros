@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class CategoriaTableViewController: UITableViewController, ReadCategoryDelegate {
     
@@ -32,7 +33,13 @@ class CategoriaTableViewController: UITableViewController, ReadCategoryDelegate 
         
     }
     
+    @IBAction func profileBtn(_ sender: Any) {
+        Analytics.logEvent("profile_button", parameters: [:])
+    }
     
+    @IBAction func openAddCategoryBtn(_ sender: Any) {
+        Analytics.logEvent("open_add_category", parameters: [:])
+    }
     
     // MARK: - Alimentar Table View
     
@@ -82,6 +89,8 @@ class CategoriaTableViewController: UITableViewController, ReadCategoryDelegate 
             self.categorias.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
             completion(true)
+            
+            Analytics.logEvent("swipe_delete_category", parameters: [:])
         }
 
         action.backgroundColor = .red

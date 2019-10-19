@@ -109,7 +109,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nAA-Lv-Kdj" customClass="AnimationView" customModule="Lottie">
-                                <rect key="frame" x="82" y="566" width="250" height="250"/>
+                                <rect key="frame" x="154" y="640" width="240" height="222"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                         </subviews>
@@ -188,7 +188,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2hP-E6-w8S" customClass="AnimationView" customModule="Lottie">
-                                <rect key="frame" x="20" y="484" width="374" height="288"/>
+                                <rect key="frame" x="-57" y="435" width="528" height="407"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                         </subviews>
@@ -243,6 +243,7 @@
                         <barButtonItem key="leftBarButtonItem" image="person.crop.circle.fill" style="plain" id="E5x-hh-kh2">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
+                                <action selector="profile:" destination="vlJ-ir-aIQ" id="O5y-Hx-fLO"/>
                                 <segue destination="Ajy-YL-Bbi" kind="popoverPresentation" popoverAnchorBarButtonItem="E5x-hh-kh2" id="0WB-yE-dFr">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                 </segue>
@@ -251,6 +252,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="KCg-vA-85H">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
+                                <action selector="addBtn:" destination="vlJ-ir-aIQ" id="rqG-RC-ugD"/>
                                 <segue destination="VlG-Am-2ra" kind="popoverPresentation" popoverAnchorBarButtonItem="KCg-vA-85H" id="Kfn-hr-ppM">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                 </segue>
@@ -399,6 +401,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="qDh-mO-mjd">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
+                                <action selector="addBookBtn:" destination="F2b-P2-K9b" id="rWi-RV-swr"/>
                                 <segue destination="oqg-sI-6Uf" kind="popoverPresentation" identifier="AddBookViewController" popoverAnchorBarButtonItem="qDh-mO-mjd" id="ajh-17-sf3">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                 </segue>
@@ -452,7 +455,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kb7-NE-RGH" customClass="AnimationView" customModule="Lottie">
-                                <rect key="frame" x="223" y="112" width="171" height="147"/>
+                                <rect key="frame" x="154" y="640" width="240" height="222"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                         </subviews>
@@ -577,7 +580,7 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="10J-pL-G3d" customClass="AnimationView" customModule="Lottie">
-                                        <rect key="frame" x="20" y="600" width="200" height="200"/>
+                                        <rect key="frame" x="82" y="580" width="250" height="220"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </view>
                                 </subviews>
@@ -627,7 +630,7 @@
         <image name="person.crop.circle.fill" width="17" height="17"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="M9i-1O-16u"/>
-        <segue reference="jfc-ah-YVx"/>
+        <segue reference="bfW-Bb-ykT"/>
+        <segue reference="b9O-GS-9s8"/>
     </inferredMetricsTieBreakers>
 </document>

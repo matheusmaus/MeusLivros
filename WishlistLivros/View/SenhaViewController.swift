@@ -36,7 +36,7 @@ class SenhaViewController: UIViewController, ValidaEmailSenhaDelegate {
     
     func startLottie() {
         
-        senhaAnimation.animation = Animation.named("663-fingerprint-scan")
+        senhaAnimation.animation = Animation.named("2469-dino-dance")
         senhaAnimation.loopMode = .loop
         senhaAnimation.play()
     }
@@ -58,7 +58,7 @@ class SenhaViewController: UIViewController, ValidaEmailSenhaDelegate {
     @IBAction func onBtnEntrar(_ sender: Any) {
         let senha = self.labelSenha.text
         
-        Analytics.logEvent("conta_existente_btn", parameters: nil)
+        Analytics.logEvent("conta_existente_btn", parameters: [:])
         
         DataSingleton.sharedInstance.validaEmailSenhaDelegate = self
         DataSingleton.sharedInstance.validaEmailSenha(email, senha!)
@@ -71,13 +71,13 @@ class SenhaViewController: UIViewController, ValidaEmailSenhaDelegate {
         let senha = self.labelSenha.text
         if (!valido) {
             DataSingleton.sharedInstance.toastMessage("E-mail/senha incorretos")
-            Analytics.logEvent("ce_email_invalido", parameters: nil)
+            Analytics.logEvent("ce_email_invalido", parameters: [:])
             
         } else {
             DataSingleton.sharedInstance.setLoginDefaults(self.email, senha!)
             self.performSegue(withIdentifier: "segueMain", sender: true)
             
-            Analytics.logEvent("entrar_main", parameters: nil)
+            Analytics.logEvent("entrar_main", parameters: [:])
         }
     }
 }

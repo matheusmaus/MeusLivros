@@ -47,6 +47,8 @@ class AddCategoryViewController: UIViewController, AddCategoryDelegate {
         
         DataSingleton.sharedInstance.addCategoryDelegate = self
         DataSingleton.sharedInstance.adicionaCategorias(name!)
+        
+        Analytics.logEvent("save_category", parameters: [:])
     }
     
     // MARK: - Adicionar Categoria
@@ -59,5 +61,7 @@ class AddCategoryViewController: UIViewController, AddCategoryDelegate {
             DataSingleton.sharedInstance.toastMessage("Ocorreu um erro ao adicionar categoria")
             dismiss(animated: true, completion: nil)
         }
+        
+        Analytics.logEvent("add_category", parameters: [:])
     }
 }

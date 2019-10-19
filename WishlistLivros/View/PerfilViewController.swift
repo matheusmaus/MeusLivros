@@ -23,7 +23,7 @@ class PerfilViewController: UIViewController {
      
      func startLottie() {
          
-         animationProfile.animation = Animation.named("2548-3d-circle-loader")
+         animationProfile.animation = Animation.named("28-loading")
          animationProfile.loopMode = .loop
          animationProfile.play()
      }
@@ -33,5 +33,6 @@ class PerfilViewController: UIViewController {
     @IBAction func onBtnLogout(_ sender: Any) {
         
         DataSingleton.sharedInstance.logout()
+        Analytics.logEvent("logout", parameters: [:])
     }
 }

@@ -33,7 +33,7 @@ class AddBookViewController: UIViewController, AddBookDelegate {
     
     func startLottie() {
         
-        animationBook.animation = Animation.named("772-bookmark-animation")
+        animationBook.animation = Animation.named("6127-chouette-famille-pricing-3")
         animationBook.loopMode = .loop
         animationBook.play()
     }
@@ -63,6 +63,8 @@ class AddBookViewController: UIViewController, AddBookDelegate {
         
         DataSingleton.sharedInstance.addBookDelegate = self
         DataSingleton.sharedInstance.adicionaLivros (bookName!, autor: author!, preco: price!, categoria: self.categoria)
+        
+        Analytics.logEvent("save_book", parameters: [:])
     }
     
     // MARK: - Adicionar Livro
@@ -75,5 +77,7 @@ class AddBookViewController: UIViewController, AddBookDelegate {
             DataSingleton.sharedInstance.toastMessage("Ocorreu um erro ao adicionar seu livro")
             dismiss(animated: true, completion: nil)
         }
+        
+        Analytics.logEvent("add_book", parameters: [:])
     }
 }

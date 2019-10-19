@@ -33,7 +33,7 @@ class EmailViewController: UIViewController, ValidaEmailDelegate {
     
     func startLottie() {
         
-        animationEmail.animation = Animation.named("772-bookmark-animation")
+        animationEmail.animation = Animation.named("2469-dino-dance")
         animationEmail.loopMode = .loop
         animationEmail.play()
     }
@@ -46,7 +46,7 @@ class EmailViewController: UIViewController, ValidaEmailDelegate {
         if ( email?.count == 0 ) {
             DataSingleton.sharedInstance.toastMessage("Informe o e-mail")
             
-            Analytics.logEvent("email_login_btn", parameters: nil)
+            Analytics.logEvent("email_login_btn", parameters: [:])
             return
     }
         
@@ -59,15 +59,15 @@ class EmailViewController: UIViewController, ValidaEmailDelegate {
     func onValidaEmail(valido: Bool, emailValido: Bool) {
         if (valido == true && emailValido == true) {
             self.performSegue(withIdentifier: "segueSenha", sender: true)
-            Analytics.logEvent("segue_senha", parameters: nil)
+            Analytics.logEvent("segue_senha", parameters: [:])
             
         } else if (valido == false && emailValido == true) {
             self.performSegue(withIdentifier: "segueNovaConta", sender: true)
-            Analytics.logEvent("segue_novaconta", parameters: nil)
+            Analytics.logEvent("segue_novaconta", parameters: [:])
             
         } else {
             DataSingleton.sharedInstance.toastMessage("E-mail inválido")
-            Analytics.logEvent("email_invalido", parameters: nil)
+            Analytics.logEvent("email_invalido", parameters: [:])
         }
     }
     

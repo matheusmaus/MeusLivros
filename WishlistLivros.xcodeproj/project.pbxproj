@@ -10,9 +10,6 @@
 		1D3A2797A6ED8BFE988A0892 /* Pods_WishlistLivros.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71719255C801E62F3C93FA3F /* Pods_WishlistLivros.framework */; };
 		8504D0D3232A7FDB003B417D /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8504D0D2232A7FDB003B417D /* AddCategoryViewController.swift */; };
 		8504D0D5232A7FFB003B417D /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8504D0D4232A7FFB003B417D /* AddBookViewController.swift */; };
-		8518D71A2356075700CE1EE5 /* 772-bookmark-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 8518D7192356075700CE1EE5 /* 772-bookmark-animation.json */; };
-		8523F46123594EFE00A42B8E /* 663-fingerprint-scan.json in Resources */ = {isa = PBXBuildFile; fileRef = 8523F46023594EFE00A42B8E /* 663-fingerprint-scan.json */; };
-		8523F4632359504B00A42B8E /* 6126-chouette-famille-pricing-2.json in Resources */ = {isa = PBXBuildFile; fileRef = 8523F4622359504B00A42B8E /* 6126-chouette-famille-pricing-2.json */; };
 		8525A4792359305700D7572A /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8525A4782359305700D7572A /* PerfilViewController.swift */; };
 		85261A6123235464000ED16D /* DataSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85261A6023235464000ED16D /* DataSingleton.swift */; };
 		852CB24C231E9BF50024444C /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852CB24B231E9BF50024444C /* EmailViewController.swift */; };
@@ -20,8 +17,11 @@
 		852CB250231E9C1D0024444C /* SenhaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852CB24F231E9C1D0024444C /* SenhaViewController.swift */; };
 		852CB254231EA3140024444C /* CategoriaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852CB253231EA3140024444C /* CategoriaTableViewController.swift */; };
 		852CB256231EA3230024444C /* ListaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852CB255231EA3230024444C /* ListaTableViewController.swift */; };
+		855A9FAE235A8D2D0007C297 /* 6126-chouette-famille-pricing-2.json in Resources */ = {isa = PBXBuildFile; fileRef = 855A9FAC235A8D2D0007C297 /* 6126-chouette-famille-pricing-2.json */; };
+		855A9FB1235A90CC0007C297 /* 28-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 855A9FB0235A90CC0007C297 /* 28-loading.json */; };
+		855A9FB3235A91930007C297 /* 2469-dino-dance.json in Resources */ = {isa = PBXBuildFile; fileRef = 855A9FB2235A91930007C297 /* 2469-dino-dance.json */; };
+		855A9FB5235A931D0007C297 /* 6127-chouette-famille-pricing-3.json in Resources */ = {isa = PBXBuildFile; fileRef = 855A9FB4235A931D0007C297 /* 6127-chouette-famille-pricing-3.json */; };
 		8571025A23365B7F0000E232 /* LivroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8571025923365B7F0000E232 /* LivroTableViewCell.swift */; };
-		859FB77223595A7E00200978 /* 2548-3d-circle-loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 859FB77123595A7D00200978 /* 2548-3d-circle-loader.json */; };
 		85A7F4522323E480000FFFCF /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A7F4512323E480000FFFCF /* Login.swift */; };
 		85A7F4542323E7F5000FFFCF /* Livros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A7F4532323E7F5000FFFCF /* Livros.swift */; };
 		85A7F4562323E80C000FFFCF /* Categorias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A7F4552323E80C000FFFCF /* Categorias.swift */; };
@@ -40,9 +40,6 @@
 		71719255C801E62F3C93FA3F /* Pods_WishlistLivros.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WishlistLivros.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8504D0D2232A7FDB003B417D /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
 		8504D0D4232A7FFB003B417D /* AddBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
-		8518D7192356075700CE1EE5 /* 772-bookmark-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "772-bookmark-animation.json"; path = "../../../../../../../Downloads/772-bookmark-animation.json"; sourceTree = "<group>"; };
-		8523F46023594EFE00A42B8E /* 663-fingerprint-scan.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "663-fingerprint-scan.json"; path = "../../../../../../../Downloads/663-fingerprint-scan.json"; sourceTree = "<group>"; };
-		8523F4622359504B00A42B8E /* 6126-chouette-famille-pricing-2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "6126-chouette-famille-pricing-2.json"; path = "../../../../../../../Downloads/6126-chouette-famille-pricing-2.json"; sourceTree = "<group>"; };
 		8525A4782359305700D7572A /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		85261A6023235464000ED16D /* DataSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSingleton.swift; sourceTree = "<group>"; };
 		852CB24B231E9BF50024444C /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
@@ -50,8 +47,11 @@
 		852CB24F231E9C1D0024444C /* SenhaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenhaViewController.swift; sourceTree = "<group>"; };
 		852CB253231EA3140024444C /* CategoriaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriaTableViewController.swift; sourceTree = "<group>"; };
 		852CB255231EA3230024444C /* ListaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaTableViewController.swift; sourceTree = "<group>"; };
+		855A9FAC235A8D2D0007C297 /* 6126-chouette-famille-pricing-2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "6126-chouette-famille-pricing-2.json"; path = "../../../../../../../Downloads/6126-chouette-famille-pricing-2.json"; sourceTree = "<group>"; };
+		855A9FB0235A90CC0007C297 /* 28-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "28-loading.json"; path = "../../../../../../../Downloads/28-loading.json"; sourceTree = "<group>"; };
+		855A9FB2235A91930007C297 /* 2469-dino-dance.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "2469-dino-dance.json"; path = "../../../../../../../Downloads/2469-dino-dance.json"; sourceTree = "<group>"; };
+		855A9FB4235A931D0007C297 /* 6127-chouette-famille-pricing-3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "6127-chouette-famille-pricing-3.json"; path = "../../../../../../../Downloads/6127-chouette-famille-pricing-3.json"; sourceTree = "<group>"; };
 		8571025923365B7F0000E232 /* LivroTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivroTableViewCell.swift; sourceTree = "<group>"; };
-		859FB77123595A7D00200978 /* 2548-3d-circle-loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "2548-3d-circle-loader.json"; path = "../../../../../../../Downloads/2548-3d-circle-loader.json"; sourceTree = "<group>"; };
 		85A7F4512323E480000FFFCF /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		85A7F4532323E7F5000FFFCF /* Livros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Livros.swift; sourceTree = "<group>"; };
 		85A7F4552323E80C000FFFCF /* Categorias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categorias.swift; sourceTree = "<group>"; };
@@ -115,12 +115,12 @@
 				85EBB52E232D77E5002267B6 /* LittleBGView.swift */,
 				85EBB530232D780E002267B6 /* LittleBGTwo.swift */,
 				8571025923365B7F0000E232 /* LivroTableViewCell.swift */,
-				8518D7192356075700CE1EE5 /* 772-bookmark-animation.json */,
-				8523F46023594EFE00A42B8E /* 663-fingerprint-scan.json */,
-				8523F4622359504B00A42B8E /* 6126-chouette-famille-pricing-2.json */,
-				859FB77123595A7D00200978 /* 2548-3d-circle-loader.json */,
 				85B873AA231E8E0100D3AA29 /* Assets.xcassets */,
 				85B873AC231E8E0100D3AA29 /* LaunchScreen.storyboard */,
+				855A9FAC235A8D2D0007C297 /* 6126-chouette-famille-pricing-2.json */,
+				855A9FB0235A90CC0007C297 /* 28-loading.json */,
+				855A9FB2235A91930007C297 /* 2469-dino-dance.json */,
+				855A9FB4235A931D0007C297 /* 6127-chouette-famille-pricing-3.json */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -232,12 +232,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				855A9FB3235A91930007C297 /* 2469-dino-dance.json in Resources */,
+				855A9FB5235A931D0007C297 /* 6127-chouette-famille-pricing-3.json in Resources */,
+				855A9FAE235A8D2D0007C297 /* 6126-chouette-famille-pricing-2.json in Resources */,
 				85B873AE231E8E0100D3AA29 /* LaunchScreen.storyboard in Resources */,
-				8523F46123594EFE00A42B8E /* 663-fingerprint-scan.json in Resources */,
-				8523F4632359504B00A42B8E /* 6126-chouette-famille-pricing-2.json in Resources */,
-				8518D71A2356075700CE1EE5 /* 772-bookmark-animation.json in Resources */,
-				859FB77223595A7E00200978 /* 2548-3d-circle-loader.json in Resources */,
 				85B873B6231E931F00D3AA29 /* GoogleService-Info.plist in Resources */,
+				855A9FB1235A90CC0007C297 /* 28-loading.json in Resources */,
 				85B873AB231E8E0100D3AA29 /* Assets.xcassets in Resources */,
 				85B873A6231E8E0000D3AA29 /* Main.storyboard in Resources */,
 			);
