@@ -36,7 +36,7 @@ class SenhaViewController: UIViewController, ValidaEmailSenhaDelegate {
     
     func startLottie() {
         
-        senhaAnimation.animation = Animation.named("2469-dino-dance")
+        senhaAnimation.animation = Animation.named("dino-dancing")
         senhaAnimation.loopMode = .loop
         senhaAnimation.play()
     }

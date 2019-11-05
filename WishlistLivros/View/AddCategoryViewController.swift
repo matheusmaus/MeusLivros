@@ -29,7 +29,7 @@ class AddCategoryViewController: UIViewController, AddCategoryDelegate {
     
     func startLottie() {
         
-        animationCategory.animation = Animation.named("6126-chouette-famille-pricing-2")
+        animationCategory.animation = Animation.named("owl-book")
         animationCategory.loopMode = .loop
         animationCategory.play()
     }

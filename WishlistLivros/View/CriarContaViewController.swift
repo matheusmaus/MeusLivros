@@ -36,7 +36,7 @@ class CriarContaViewController: UIViewController {
      
      func startLottie() {
          
-         animationCriar.animation = Animation.named("2469-dino-dance")
+         animationCriar.animation = Animation.named("dino-dancing")
          animationCriar.loopMode = .loop
          animationCriar.play()
      }

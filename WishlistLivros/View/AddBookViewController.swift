@@ -33,7 +33,7 @@ class AddBookViewController: UIViewController, AddBookDelegate {
     
     func startLottie() {
         
-        animationBook.animation = Animation.named("6127-chouette-famille-pricing-3")
+        animationBook.animation = Animation.named("owl-book-leaves")
         animationBook.loopMode = .loop
         animationBook.play()
     }

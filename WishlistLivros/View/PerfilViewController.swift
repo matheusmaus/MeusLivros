@@ -23,7 +23,7 @@ class PerfilViewController: UIViewController {
      
      func startLottie() {
          
-         animationProfile.animation = Animation.named("28-loading")
+         animationProfile.animation = Animation.named("whale")
          animationProfile.loopMode = .loop
          animationProfile.play()
      }

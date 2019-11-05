@@ -19,6 +19,14 @@ protocol ValidaEmailSenhaDelegate: class {
     func onValidaEmailSenha(valido: Bool)
 }
 
+protocol UpdateUsernameDelegate: class {
+    func onUpdateUsername(valido: Bool)
+}
+
+protocol UpdateEmailDelegate: class {
+    func onUpdateEmail(valido: Bool)
+}
+
 protocol LogoutDelegate: class {
     func onLogout(valido: Bool)
 }
@@ -52,6 +60,9 @@ class DataSingleton {
     var validaEmailDelegate: ValidaEmailDelegate!
     var validaEmailSenhaDelegate: ValidaEmailSenhaDelegate!
     
+    var updateUsernameDelegate: UpdateUsernameDelegate!
+    var updateEmaileDelegate: UpdateEmailDelegate!
+    
     var addCategoryDelegate: AddCategoryDelegate!
     var readCategoryDelegate: ReadCategoryDelegate!
     var deleteCategoryDelegate: DeleteCategoryDelegate!
@@ -64,6 +75,7 @@ class DataSingleton {
     
     private let storedEmail = "email"
     private let storedPassword = "senha"
+    private let storedUsername = "usuario"
     
     static let sharedInstance = DataSingleton()
     public init() {}
@@ -96,7 +108,7 @@ class DataSingleton {
         }
     }
     
-    // MARK: - Valida eMail
+    // MARK: - Valida Email
     
     func validaEmail(_ email: String) {
         let this = self;
@@ -144,12 +156,25 @@ class DataSingleton {
         }
     }
     
+    // MARK: - Atualizar nome
+    
+    func updateUsername (_ usuario: String) {
+        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+        changeRequest?.displayName = usuario
+        changeRequest?.commitChanges { (error) in
+            // ...
+          }
+        
+    }
+    
     // MARK: - Logout
     
-    public func logout() {
+    public func logout() -> Login {
         let defaults = UserDefaults.standard
         defaults.removeObject(forKey: self.storedEmail)
         defaults.removeObject(forKey: self.storedPassword)
+        
+        return Login()
     }
     
     // MARK: - Login Defaults

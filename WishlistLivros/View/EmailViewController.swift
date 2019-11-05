@@ -33,7 +33,7 @@ class EmailViewController: UIViewController, ValidaEmailDelegate {
     
     func startLottie() {
         
-        animationEmail.animation = Animation.named("2469-dino-dance")
+        animationEmail.animation = Animation.named("dino-dancing")
         animationEmail.loopMode = .loop
         animationEmail.play()
     }
@@ -54,7 +54,7 @@ class EmailViewController: UIViewController, ValidaEmailDelegate {
         DataSingleton.sharedInstance.validaEmail(email!)
     }
     
-    // MARK: - Validação / Telas Personalizadas
+    // MARK: - Validação para Telas Personalizadas
     
     func onValidaEmail(valido: Bool, emailValido: Bool) {
         if (valido == true && emailValido == true) {

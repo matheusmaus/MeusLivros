@@ -11,9 +11,11 @@ import Foundation
 struct Login {
     var email: String
     var senha: String
+    var usuario: String
     
     init() {
         email = ""
         senha = ""
+        usuario = ""
     }
 }
