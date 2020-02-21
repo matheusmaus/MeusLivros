@@ -34,6 +34,8 @@
 		85CB8A582371B3100041FAFB /* dino-dancing.json in Resources */ = {isa = PBXBuildFile; fileRef = 85CB8A542371B3100041FAFB /* dino-dancing.json */; };
 		85EBB52F232D77E5002267B6 /* LittleBGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EBB52E232D77E5002267B6 /* LittleBGView.swift */; };
 		85EBB531232D780E002267B6 /* LittleBGTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EBB530232D780E002267B6 /* LittleBGTwo.swift */; };
+		BE1644D623ED0A9900E3B533 /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1644D523ED0A9900E3B533 /* UserAPI.swift */; };
+		BEC3D1C92392C906001BC82C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC3D1C82392C906001BC82C /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +70,8 @@
 		85EBB52E232D77E5002267B6 /* LittleBGView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LittleBGView.swift; sourceTree = "<group>"; };
 		85EBB530232D780E002267B6 /* LittleBGTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleBGTwo.swift; sourceTree = "<group>"; };
 		B135D77788E63BBEEFBD4C11 /* Pods-WishlistLivros.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WishlistLivros.release.xcconfig"; path = "Target Support Files/Pods-WishlistLivros/Pods-WishlistLivros.release.xcconfig"; sourceTree = "<group>"; };
+		BE1644D523ED0A9900E3B533 /* UserAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
+		BEC3D1C82392C906001BC82C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,7 @@
 				85A7F4512323E480000FFFCF /* Login.swift */,
 				85A7F4532323E7F5000FFFCF /* Livros.swift */,
 				85A7F4552323E80C000FFFCF /* Categorias.swift */,
+				BEC3D1C82392C906001BC82C /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -128,11 +133,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		852CB24A231E9B7D0024444C /* Controller */ = {
+		852CB24A231E9B7D0024444C /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				BE1644D523ED0A9900E3B533 /* UserAPI.swift */,
 			);
-			path = Controller;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		85B87394231E8E0000D3AA29 = {
@@ -157,7 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				852CB248231E9B700024444C /* Model */,
-				852CB24A231E9B7D0024444C /* Controller */,
+				852CB24A231E9B7D0024444C /* Network */,
 				852CB249231E9B760024444C /* View */,
 				85B873A0231E8E0000D3AA29 /* AppDelegate.swift */,
 				85B873B5231E931F00D3AA29 /* GoogleService-Info.plist */,
@@ -303,10 +309,12 @@
 				852CB254231EA3140024444C /* CategoriaTableViewController.swift in Sources */,
 				85B873A1231E8E0000D3AA29 /* AppDelegate.swift in Sources */,
 				8504D0D3232A7FDB003B417D /* AddCategoryViewController.swift in Sources */,
+				BEC3D1C92392C906001BC82C /* User.swift in Sources */,
 				856B5903235B4565002EC62E /* EditProfileViewController.swift in Sources */,
 				852CB256231EA3230024444C /* ListaTableViewController.swift in Sources */,
 				85261A6123235464000ED16D /* DataSingleton.swift in Sources */,
 				852CB250231E9C1D0024444C /* SenhaViewController.swift in Sources */,
+				BE1644D623ED0A9900E3B533 /* UserAPI.swift in Sources */,
 				85A7F4562323E80C000FFFCF /* Categorias.swift in Sources */,
 				852CB24C231E9BF50024444C /* EmailViewController.swift in Sources */,
 				8525A4792359305700D7572A /* PerfilViewController.swift in Sources */,
@@ -459,16 +467,18 @@
 			baseConfigurationReference = 429A4CA1DB4F7136A4DB20F4 /* Pods-WishlistLivros.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GF6JBMPR58;
+				DEVELOPMENT_TEAM = 423UYAH78P;
 				INFOPLIST_FILE = WishlistLivros/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = digital.mxm.WishlistLivros;
+				PRODUCT_BUNDLE_IDENTIFIER = asdsadsadsa.WishlistLivros;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -479,16 +489,18 @@
 			baseConfigurationReference = B135D77788E63BBEEFBD4C11 /* Pods-WishlistLivros.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GF6JBMPR58;
+				DEVELOPMENT_TEAM = 423UYAH78P;
 				INFOPLIST_FILE = WishlistLivros/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = digital.mxm.WishlistLivros;
+				PRODUCT_BUNDLE_IDENTIFIER = asdsadsadsa.WishlistLivros;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

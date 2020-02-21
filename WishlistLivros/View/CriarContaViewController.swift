@@ -78,9 +78,16 @@ class CriarContaViewController: UIViewController {
             }
             else {
                 DataSingleton.sharedInstance.setLoginDefaults(self.email, senha!)
+
                 self.performSegue(withIdentifier: "segueMain2", sender: true)
-                
+
                 Analytics.logEvent("criar_conta_main", parameters: [:])
+
+                guard let uid = Auth.auth().currentUser?.uid else{
+                    return
+                }
+               
+                UserAPI.createUser(user: User(id: uid, email: self.email, name: ""))
             }
         }
     }

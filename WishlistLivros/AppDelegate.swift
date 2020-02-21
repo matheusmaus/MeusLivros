@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     /// Temporary variable to hold a shortcut item from the launching or activation of the app.
     var shortcutItemToProcess: UIApplicationShortcutItem?
+    static var user: Firebase.User?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

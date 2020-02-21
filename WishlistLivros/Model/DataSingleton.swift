@@ -173,6 +173,8 @@ class DataSingleton {
         let defaults = UserDefaults.standard
         defaults.removeObject(forKey: self.storedEmail)
         defaults.removeObject(forKey: self.storedPassword)
+
+        try? Auth.auth().signOut()
         
         return Login()
     }
@@ -180,12 +182,23 @@ class DataSingleton {
     // MARK: - Login Defaults
     
     public func setLoginDefaults(_ email: String, _ senha: String) {
-        
         let defaults = UserDefaults.standard
         defaults.set(email, forKey: self.storedEmail)
         defaults.set(senha, forKey: self.storedPassword)
-        
     }
+
+  public func getUser() -> User {
+    let email = UserDefaults.standard.string(forKey: self.storedEmail) ?? ""
+    let id = UserDefaults.standard.string(forKey: "uid") ?? ""
+    let name = UserDefaults.standard.string(forKey: self.storedUsername) ?? ""
+    return User(id: id, email: email, name: name)
+  }
+
+  public func updateUser(_ email: String, _ name: String) {
+    let defaults = UserDefaults.standard
+    defaults.set(email, forKey: self.storedEmail)
+    defaults.set(name, forKey: self.storedUsername)
+  }
     
     public func getLoginDefaults() -> Login {
         let defaults = UserDefaults.standard

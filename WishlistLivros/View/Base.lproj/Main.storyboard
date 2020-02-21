@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nBo-ZJ-ONa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nBo-ZJ-ONa">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -56,7 +56,7 @@
                         <viewLayoutGuide key="safeArea" id="3D6-eO-3Nd"/>
                     </view>
                     <navigationItem key="navigationItem" id="XDu-Ti-GCp"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="animationEmail" destination="VhZ-pb-i5o" id="k7v-YX-4PF"/>
                         <outlet property="labelEmail" destination="dRU-es-2wa" id="iSf-PA-jrE"/>
@@ -112,12 +112,26 @@
                                 <rect key="frame" x="154" y="640" width="240" height="222"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rq8-zD-IGL">
+                                <rect key="frame" x="20" y="94" width="29" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="arrow.left" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="default">
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                    </preferredSymbolConfiguration>
+                                </state>
+                                <connections>
+                                    <segue destination="nBo-ZJ-ONa" kind="show" id="Kq5-PF-5b3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                         <viewLayoutGuide key="safeArea" id="3o5-1t-izQ"/>
                     </view>
                     <navigationItem key="navigationItem" id="VRC-rP-A31"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="animationCriar" destination="nAA-Lv-Kdj" id="kHv-Zo-LL1"/>
                         <outlet property="labelPass" destination="nvj-U7-QPr" id="AaB-7x-2UF"/>
@@ -148,7 +162,7 @@
                                     <color key="titleShadowColor" red="0.18635174630000001" green="0.1745328307" blue="0.35295891759999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <segue destination="gNp-Y8-ZSe" kind="show" id="duu-jA-4I0"/>
+                                    <action selector="editButton:" destination="Ajy-YL-Bbi" eventType="touchUpInside" id="Hic-TT-MXG"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ellipse" translatesAutoresizingMaskIntoConstraints="NO" id="8ap-rL-N7q">
@@ -188,6 +202,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onBtnLogout:" destination="yDV-hS-yb6" eventType="touchUpInside" id="7Kg-fu-aa9"/>
+                                    <action selector="onBtnLogout:" destination="Ajy-YL-Bbi" eventType="touchUpInside" id="BAz-5T-bla"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2hP-E6-w8S" customClass="AnimationView" customModule="Lottie">
@@ -200,6 +215,8 @@
                     </view>
                     <connections>
                         <outlet property="animationProfile" destination="2hP-E6-w8S" id="sfa-Tg-nQs"/>
+                        <outlet property="emailLabel" destination="8G5-Vg-NrP" id="v1i-Qx-FEX"/>
+                        <outlet property="userNameLabel" destination="xmU-Gg-voZ" id="tZO-eB-9dc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hzP-KJ-uDR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -210,9 +227,9 @@
         <!--Edit Profile View Controller-->
         <scene sceneID="H1u-Aj-w5c">
             <objects>
-                <viewController id="gNp-Y8-ZSe" customClass="EditProfileViewController" customModule="WishlistLivros" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditProfileViewController" id="gNp-Y8-ZSe" customClass="EditProfileViewController" customModule="WishlistLivros" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0jF-bR-Ooz">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgEditProfile" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fsB-la-mGz">
@@ -240,7 +257,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="onBtnLogout:" destination="yDV-hS-yb6" eventType="touchUpInside" id="POi-uq-ZNE"/>
+                                    <action selector="dismiss:" destination="gNp-Y8-ZSe" eventType="touchUpInside" id="Sf8-Zw-KPr"/>
                                     <segue destination="Ajy-YL-Bbi" kind="popoverPresentation" popoverAnchorView="BvU-q5-uic" id="j7w-7T-MfA">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
@@ -264,23 +281,26 @@
                                 <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite o seu nome desejado" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qGs-qT-vIf">
-                                <rect key="frame" x="20" y="237" width="374" height="34"/>
+                                <rect key="frame" x="20" y="236" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="textColor" red="0.71372549019999998" green="0.74117647060000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite seu e-mail atual" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0l7-jk-ISM">
-                                <rect key="frame" x="20" y="388" width="374" height="34"/>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite seu e-mail atual" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0l7-jk-ISM">
+                                <rect key="frame" x="19" y="388" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="textColor" red="0.71372549019999998" green="0.74117647060000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite seu e-mail desejo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kXs-Oc-CRk">
                                 <rect key="frame" x="20" y="476" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="textColor" red="0.71372549019999998" green="0.74117647060000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -294,7 +314,8 @@
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirme seu e-mail desejo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7pT-1h-QvM">
                                 <rect key="frame" x="20" y="524" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="textColor" red="0.71372549019999998" green="0.74117647060000003" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -304,7 +325,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="QPn-W7-uje"/>
                     <connections>
-                        <outlet property="labelEmail" destination="0l7-jk-ISM" id="4zB-Vi-sWe"/>
+                        <outlet property="actualEmail" destination="0l7-jk-ISM" id="jv5-Lv-OeZ"/>
+                        <outlet property="emailConfimTextFIeld" destination="7pT-1h-QvM" id="5Sh-o1-7lZ"/>
+                        <outlet property="labelEmail" destination="kXs-Oc-CRk" id="Ai3-bt-TiO"/>
+                        <outlet property="nameTextField" destination="qGs-qT-vIf" id="aVk-Wc-s5L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VsE-KV-2Aw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -314,7 +338,7 @@
         <!--Categorias-->
         <scene sceneID="WDU-GF-Uml">
             <objects>
-                <tableViewController modalPresentationStyle="fullScreen" id="vlJ-ir-aIQ" customClass="CategoriaTableViewController" customModule="WishlistLivros" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" clearsSelectionOnViewWillAppear="NO" id="vlJ-ir-aIQ" customClass="CategoriaTableViewController" customModule="WishlistLivros" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Y5N-GL-Bsr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -367,6 +391,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="VCJ-DC-hik">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XEw-FR-fcy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -450,7 +477,7 @@
         <!--Livros-->
         <scene sceneID="hui-M3-Ybd">
             <objects>
-                <tableViewController modalPresentationStyle="fullScreen" id="F2b-P2-K9b" customClass="ListaTableViewController" customModule="WishlistLivros" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" clearsSelectionOnViewWillAppear="NO" id="F2b-P2-K9b" customClass="ListaTableViewController" customModule="WishlistLivros" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="KEN-nC-1Fb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -516,6 +543,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="cVi-Dz-LFl">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ro-tM-XdR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -565,12 +595,26 @@
                                 <rect key="frame" x="154" y="640" width="240" height="222"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIl-rt-hBX">
+                                <rect key="frame" x="20" y="94" width="29" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="arrow.left" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="default">
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                    </preferredSymbolConfiguration>
+                                </state>
+                                <connections>
+                                    <segue destination="nBo-ZJ-ONa" kind="show" id="v5A-Ip-gMC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                         <viewLayoutGuide key="safeArea" id="bOQ-Si-uCG"/>
                     </view>
                     <navigationItem key="navigationItem" id="rKJ-WB-yKu"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="labelSenha" destination="mbG-KG-ymI" id="yCn-Uu-uQ0"/>
                         <outlet property="senhaAnimation" destination="Kb7-NE-RGH" id="gas-Zh-NOt"/>
@@ -584,10 +628,11 @@
         <!--Navigation Controller-->
         <scene sceneID="yBW-nI-Fzd">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nBo-ZJ-ONa" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="nBo-ZJ-ONa" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="mHt-Bo-sxC"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UsK-QM-e8x">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -730,6 +775,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.left" catalog="system" width="64" height="48"/>
         <image name="avatar" width="128" height="128"/>
         <image name="bgEditProfile" width="375" height="816"/>
         <image name="bgProfile" width="375" height="816"/>
@@ -739,7 +785,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="bfW-Bb-ykT"/>
-        <segue reference="SZ6-25-4DH"/>
-        <segue reference="j7w-7T-MfA"/>
+        <segue reference="B35-Pz-TId"/>
+        <segue reference="v5A-Ip-gMC"/>
+        <segue reference="0WB-yE-dFr"/>
     </inferredMetricsTieBreakers>
 </document>
